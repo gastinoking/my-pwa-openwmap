@@ -1,0 +1,22 @@
+{
+    "name": "weather-app",
+    "short_name": "weatherapp",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#2A3443",
+    "description": "A demo app for a fictional conference",
+    "theme_color": "#2A3443",
+    "icons": [
+        {
+            "src": "./icon-72x72.png",
+            "sizes": "72x72",
+            "type": "image/png"
+        },
+        {
+            "src": "./icon-144x144/home/king/Téléchargements/icon-96x96.png.png",
+            "sizes": "144x144",
+            "type": "image/png"
+        }
+    ]
+}
+ 

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="Description" content="weather app" />
+    <title>weather app</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+      integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+      crossorigin="anonymous"
+    />
+ 
+    <link rel="manifest" href="./manifest.json" />
+    <!-- ios support -->
+    <link rel="apple-touch-icon" href="./icon-72x72.png" />
+
+    <meta name="theme-color" content="#db4938" />
+
+    <link
+      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+  </head>
+
+  <body class="h-screen top bg-cover bg-center overflow-hidden relative">
+
+    <div class="h-full bg-black bg-opacity-75 sm:flex">
+
+      <div class="max-w-lg w-full mx-auto flex items-center justify-center">
+        <div class="flex flex-col w-full p-4">
+  
+          <div class="top-infos text-white">
+            
+  
+            <div class="flex flex-col  items-center">
+  
+            
+  
+              <div class="city text-4xl mt-5">
+                <h2 id="city" class="uppercase">Lomé</h2>
+              </div>
+              <div class="mt-3">
+                <div class="text-5xl">
+                  <span class="degre">18 </span> <div class="text-4xl inline -ml-3"> <span class="-mt-6"> &deg;</span>C</div>
+                </div>
+                  
+              </div>
+              <div class="iconeTemps"></div>
+  
+               <div class="flex flex-col  mt-3 items-center">
+                <img class="" id="iconeTemps" src="" alt="" />
+              </div>
+            </div>
+           
+  
+            <div class="flex justify-between py-4 text-xs uppercase font-semibold">
+              <div class="matin">
+                <span class="matin-titel">Sunrise</span>
+                <span id="matin">6h04</span>
+              </div>
+              <div class="matin">
+                <span class="matin-titel">Sunset</span>
+                <span id="soir">6h04</span>
+              </div>
+            </div>
+
+
+            <div class="flex flex-col mt-16">
+              <label class="w-full flex flex-col ">
+                Rechercher
+                <input
+                  type="text"
+                  id="cityInput"
+                 
+                  class="w-full  bg-gray-700 text-gray-100 text-lg p-3  bg-opacity-50
+                  rounded focus:outline-none focus:shadow-outline border-indigo-300 shadow-xl"
+                  placeholder="Recherche"
+                  
+                />
+              </label>
+  
+              <button id="btnSerche" class="mt-5
+              bg-transparent 
+              font-bold
+              border
+              border-gray-600
+              rounded 
+              text-white
+              p-2
+              text-sm
+              uppercase
+              focus:outline-none
+              focus:bg-opacity-50
+              focus:shadow-outline            
+              hover:bg-indigo-500
+              shadow-2xl">Rechercher</button>
+              
+            </div>
+        
+           
+  
+          </div>
+  
+          
+            
+         
+  
+        </div>
+      </div>
+
+      <div class="bg-gray-400 p-2 absolut right-0 left-0  rounded  bottom-0 hidden  tex-center alert">
+        <h5>  Une erreur est survenue </h5>
+    </div>
+      
+    </div>
+
+    <script>
+      window.onload = () => {
+        "use strict";
+        if ("serviceWorker" in navigator) {
+          navigator.serviceWorker
+            .register("./sw.js")
+            .then((reg) => {
+              console.log("Success : ", reg);
+            })
+            .catch((err) => {
+              console.log("Failure : ", err);
+            });
+        }
+      };
+    </script>
+    <script src="./app.js"></script>
+  </body>
+</html>
